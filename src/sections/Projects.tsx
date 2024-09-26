@@ -1,6 +1,6 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import darkSaasLandingPage from "../../public/images/dark-saas-landing-page.png";
+import lightSaasLandingPage from "../../public/images/light-saas-landing-page.png";
+import aiStartupLandingPage from "../../public/images/ai-startup-landing-page.png";
 
 const portfolioProjects = [
   {
