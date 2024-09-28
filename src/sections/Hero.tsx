@@ -7,22 +7,22 @@ import HeroOrbit from "@/components/HeroOrbit";
 export const HeroSection = () => {
   return (
     <div className="py-32 md:py-48 lg:py-40 relative z-0 w-full">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,rgba(0,0,0,0.7)_70%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
           style={{ backgroundImage: `url(${grainImage.src})` }}
         ></div>
         {/* all-rings */}
-        <div className="size-[1220px] hero-ring "></div>
-        <div className="size-[1020px] hero-ring "></div>
-        <div className="size-[820px] hero-ring "></div>
-        <div className="size-[620px] hero-ring "></div>
+        {/* <div className="size-[1220px] hero-ring "></div> */}
+        {/* <div className="size-[1020px] hero-ring "></div> */}
+        {/* <div className="size-[820px] hero-ring "></div> */}
+        {/* <div className="size-[620px] hero-ring "></div> */}
         {/* animation starts */}
 
-        <HeroOrbit size={800} rotation={-71}>
+        {/* <HeroOrbit size={800} rotation={-60}>
           <StarIcon className="size-28 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={400} rotation={30}>
+        </HeroOrbit> */}
+        {/* <HeroOrbit size={400} rotation={70}>
           <StarIcon className="size-12 text-emerald-300/10" />
         </HeroOrbit>
         <HeroOrbit size={590} rotation={98}>
@@ -40,6 +40,9 @@ export const HeroSection = () => {
         <HeroOrbit size={500} rotation={-200}>
           <SparklIcon className="size-3 text-emerald-300/20" />
         </HeroOrbit>
+        <HeroOrbit size={500} rotation={-300}>
+          <SparklIcon className="size-7 text-emerald-300/20 " />
+        </HeroOrbit> */}
       </div>
       <div className="container">
         <div className="flex flex-col items-center">
@@ -71,11 +74,11 @@ export const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-center md:items-center md:justify-center mt-8 gap-4">
-          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
+          <button className=" cursor-pointer inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
             <span className="font-semibold">Explore My Work</span>
             <ArrowDown className="size-4" />
           </button>
-          <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-950 px-6 h-12 rounded-xl">
+          <button className="cursor-pointer inline-flex items-center gap-2 border border-white bg-white text-gray-950 px-6 h-12 rounded-xl">
             <span className="font-[2rem]">👋</span>
             <span className="font-bold">Let's Connect</span>
           </button>

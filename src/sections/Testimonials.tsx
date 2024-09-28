@@ -1,9 +1,12 @@
+import SectionHeader from "@/components/SectionHeader";
 import memojiAvatar1 from "../../public/images/memoji-avatar-1.png";
 import memojiAvatar2 from "../../public/images/memoji-avatar-2.png";
 import memojiAvatar3 from "../../public/images/memoji-avatar-3.png";
 import memojiAvatar4 from "../../public/images/memoji-avatar-4.png";
 import memojiAvatar5 from "../../public/images/memoji-avatar-5.png";
-
+import grainImage from "@/../public/images/grain.jpg";
+import Image from "next/image";
+import Card from "@/components/Card";
 const testimonials = [
   {
     name: "Alex Turner",
@@ -38,5 +41,44 @@ const testimonials = [
 ];
 
 export const TestimonialsSection = () => {
-  return <div>Testimonials Section</div>;
+  return (
+    <div className="py-16 lg:py-24">
+      <div className="container">
+        <SectionHeader
+          eyebrow="Happy Clients"
+          description="Don't just take my word for it. See what my clients have to say about
+        my’ work."
+          title="What Clients Say about Me"
+        />
+
+        <div className="mt-16 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_80%,transparent)]">
+          <div className="flex gap-8 flex-none ">
+            {testimonials.map((testimonial) => (
+              <Card
+                key={testimonial.name}
+                className="max-w-xs md:max-w-md p-6 md:p-8"
+              >
+                <div className="flex gap-4 items-center">
+                  <Image
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="size-14 bg-gray-600 inline-flex items-center rounded-full max-h-full"
+                  />
+                  <div>
+                    <div className="font-semibold">{testimonial.name}</div>
+                    <div className="text-sm text-white/40">
+                      {testimonial.position}
+                    </div>
+                  </div>
+                </div>
+                <p className="mt-4 md:mt-6 text-sm md:text-base">
+                  {testimonial.text}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
