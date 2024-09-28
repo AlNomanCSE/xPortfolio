@@ -1,12 +1,15 @@
+"use client";
+
+import React from "react";
 import SectionHeader from "@/components/SectionHeader";
+import Image from "next/image";
+import Card from "@/components/Card";
 import memojiAvatar1 from "../../public/images/memoji-avatar-1.png";
 import memojiAvatar2 from "../../public/images/memoji-avatar-2.png";
 import memojiAvatar3 from "../../public/images/memoji-avatar-3.png";
 import memojiAvatar4 from "../../public/images/memoji-avatar-4.png";
 import memojiAvatar5 from "../../public/images/memoji-avatar-5.png";
-import grainImage from "@/../public/images/grain.jpg";
-import Image from "next/image";
-import Card from "@/components/Card";
+
 const testimonials = [
   {
     name: "Alex Turner",
@@ -46,23 +49,24 @@ export const TestimonialsSection = () => {
       <div className="container">
         <SectionHeader
           eyebrow="Happy Clients"
-          description="Don't just take my word for it. See what my clients have to say about
-        my’ work."
+          description="Don't just take my word for it. See what my clients have to say about my work."
           title="What Clients Say about Me"
         />
 
-        <div className="mt-16 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_80%,transparent)]">
-          <div className="flex gap-8 flex-none ">
-            {testimonials.map((testimonial) => (
+        <div className="mt-12 lg:mt-20 overflow-hidden">
+          <div className="flex animate-marquee">
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
               <Card
-                key={testimonial.name}
-                className="max-w-xs md:max-w-md p-6 md:p-8"
+                key={`${testimonial.name}-${index}`}
+                className="max-w-xs md:max-w-md p-6 md:p-8 hover:-rotate-3 transition duration-300 flex-shrink-0 mx-4"
               >
                 <div className="flex gap-4 items-center">
                   <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="size-14 bg-gray-600 inline-flex items-center rounded-full max-h-full"
+                    width={56}
+                    height={56}
+                    className="bg-gray-600 rounded-full"
                   />
                   <div>
                     <div className="font-semibold">{testimonial.name}</div>

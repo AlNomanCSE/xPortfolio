@@ -1,6 +1,6 @@
 import Card from "@/components/Card";
 import SectionHeader from "@/components/SectionHeader";
-import StarIcon from "@/../public/icons/star.svg";
+
 import bookImage from "@/../public/images/book-cover.png";
 import Image from "next/image";
 
@@ -9,8 +9,6 @@ import HtmlIcon from "@/../public/icons/html5.svg";
 import CSSIcon from "@/../public/icons/css3.svg";
 import ReactIcon from "@/../public/icons/react.svg";
 import GitHubIcon from "@/../public/icons/github.svg";
-import TechIcon from "@/components/TechIcon";
-import MapImage from "@/../public/images/map.png";
 import SmileImage from "@/../public/images/memoji-smile.png";
 import CardHeader from "@/components/CardHeader";
 import ToolboxItems from "@/components/ToolboxItems";
@@ -21,32 +19,29 @@ const toolboxItems = [
     iconType: JavaScriptIcon,
   },
   {
-    title: "TypeScript",
+    title: "ReactJS",
     iconType: ReactIcon,
   },
   {
-    title: "AWS",
+    title: "CSS",
     iconType: CSSIcon,
   },
   {
-    title: "Spring Boot",
+    title: "Git",
     iconType: GitHubIcon,
   },
   {
-    title: "React JS",
+    title: "HTML",
     iconType: HtmlIcon,
   },
 ];
 
 const hobbies = [
-  { title: "Singing", emoji: "🎶", left: "50%", top: "5%" },
-  { title: "Playing ", emoji: "🏏", left: "5%", top: "50%" },
-  { title: "Singing", emoji: "🎶", left: "10%", top: "35%" },
-  { title: "Playing ", emoji: "🏏", left: "45%", top: "60%" },
-  { title: "Singing", emoji: "🎶", left: "20%", top: "17%" },
-  { title: "Playing ", emoji: "🏏", left: "35%", top: "40%" },
-  { title: "Singing", emoji: "🎶", left: "70%", top: "45%" },
-  { title: "Playing ", emoji: "🏏", left: "5%", top: "65%" },
+  { title: "Singing", emoji: "🎶" },
+  { title: "Playing", emoji: "🏏 ⚽" },
+  { title: "Reading", emoji: "📚" },
+  { title: "Traveling", emoji: "✈️" },
+  { title: "Cooking", emoji: "🍳" },
 ];
 export const AboutSection = () => {
   return (
@@ -98,12 +93,11 @@ export const AboutSection = () => {
                 description="Explore my interests and hobbies beyond the digital realm."
                 className="px-6 py-6"
               />
-              <div className="relative flex-1">
+              <div className="flex-1 flex-wrap p-4 sm:p-2">
                 {hobbies.map((hobby, index) => (
                   <div
                     key={index}
-                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
-                    style={{ left: hobby.left, top: hobby.top }}
+                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-2 m-1"
                   >
                     <span className="font-medium text-gray-950">
                       {hobby.title}
@@ -115,14 +109,16 @@ export const AboutSection = () => {
             </Card>
             <Card className="h-[320px] p-0 relative md:col-span-2">
               <Image
-                src={MapImage}
+                src={`/images/Capture.JPG`}
                 alt="My Location"
                 className="h-full w-full object-cover object-left-top"
+                width={1000}
+                height={1000}
               />
               <Image
                 src={SmileImage}
                 alt="My Image"
-                className="size-[100px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full "
+                className="size-[80px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full "
               />
             </Card>
           </div>
